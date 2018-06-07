@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>易购商城管理后台登录</title>
+		<link rel="stylesheet" href="css/bootstrap-3.3.7/bootstrap.min.css" />
+		<style>
+			hr {
+				height: 3px;
+				background-color: #DCDCDC;
+			}
+			header {
+				height: 80px;
+			}
+			header>span {
+				font-size: 30px;
+				font-weight: bold;
+				line-height: 80px;
+			}
+			.main {
+				width: 500px;
+				margin: 50px auto;
+				
+			}
+			.main>form>button {
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="img/logo.png"/>
+			<span>易购商城管理系统</span>
+		</header>
+		<hr />
+		<div class="main text-center">
+			<h2>管理员登录</h2>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="inputUsername" class="col-sm-2 control-label">用户名:</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名" />
+					</div>
+				</div>
+				<br />
+				<div class="form-group">
+					<label for="inputPassword" class="col-sm-2 control-label">密&nbsp;&nbsp;码:</label>
+					<div class="col-sm-9">
+						<input type="password" class="form-control" id="password" name="password" placeholder="请输入密码" maxlength="16" />
+					</div>
+					
+				</div>
+				<br />
+				<button type="button" class="btn btn-info btn-lg">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>后台管理</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+				border: 0px;
+			}
+			
+			.wrap {
+				width: 100%;
+				height: 760px;
+				/*border: solid 1px red;*/
+			}
+			
+			.header {
+				width: 100%;
+				height: 15%;
+				background-color: rgba(216, 76, 41, .5);
+			}
+			
+			.logo {
+				float: left;
+				width: 20%;
+				height: 100%;
+			}
+			
+			.logo img {
+				width: 90%;
+				height: 90%;
+			}
+			/*自定义字体*/
+			
+			@font-face {
+				font-family: "xuefeng";
+				src: url('font/xuefeng.ttf');
+			}
+			/*自定义缩放动画*/
+			
+			@keyframes fontSize {
+				0% {
+					transform: scale(1.0);
+				}
+				50% {
+					transform: scale(1.2);
+				}
+				100% {
+					transform: scale(1.0);
+				}
+			}
+			/*自定义360旋转动画*/
+			
+			@keyframes scrollplay {
+				from {
+					transform: rotateZ(0deg);
+				}
+				to {
+					transform: rotateZ(360deg);
+				}
+			}
+			
+			.title {
+				width: 60%;
+				height: 100px;
+				float: left;
+				text-align: center;
+				line-height: 100px;
+				font-size: 30pt;
+				font-weight: bold;
+				font-family: "xuefeng";
+				animation: fontSize 5s linear normal infinite;
+			}
+			
+			.login-info {
+				height: 50px;
+				position: absolute;
+				top: 40px;
+				right: 25px;
+				line-height: -50px;
+			}
+			
+			.login-icon {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+			}
+			
+			.login-icon:hover {
+				animation: scrollplay 1s linear;
+			}
+			
+			.body {
+				width: 100%;
+				height: 83%;
+				background-color: rgba(80, 139, 55, .5);
+			}
+			
+			.b-left {
+				float: left;
+				width: 15%;
+				height: 100%;
+				background-color: rgba(90, 139, 20, .5);
+			}
+			
+			.menu_wrap>li>a {
+				display: block;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: #fff;
+				background-color: rgba(42, 42, 42, .7);
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+				text-decoration: none;
+				font-size: 1.2em;
+				font-weight: lighter;
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				user-select: none;
+			}
+			
+			.menu_wrap>li>a:hover,
+			.menu-first>ul>li>a:hover {
+				background-color: rgba(255, 255, 255, .7);
+				color: rgba(0, 0, 0, .7);
+				cursor: pointer;
+			}
+			
+			.menu-first>ul>li>a {
+				display: block;
+				margin-left: 15%;
+				width: 85%;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				color: #fff;
+				background-color: rgba(42, 42, 42, .7);
+				border-bottom: 1px solid #fff;
+				border-left: 1px solid #fff;
+				text-decoration: none;
+				font-size: 1.0em;
+				font-weight: lighter;
+				-moz-user-select: none;
+				-khtml-user-select: none;
+				user-select: none;
+			}
+			/*激活状态*/
+			
+			.menu-active {
+				background-color: rgba(255, 255, 255, .7) !important;
+				color: rgba(0, 0, 0, .7) !important;
+			}
+			
+			.menu-first>ul {
+				display: none;
+			}
+			
+			.b-right {
+				float: right;
+				width: 85%;
+				height: 100%;
+				background-color: rgba(100, 149, 50, .5);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap" class="wrap">
+			<!-- 顶部信息 -->
+			<header id="header" class="header">
+				<div class="logo"><img src="img/logo.png" /></div>
+				<div id="title" class="title"><text>易购商城欢迎你</text></div>
+				<div id="login-info" class="login-info">
+					<img id="login-icon" class="login-icon" src="img/plmm.jpg" /> 管理员：softeem
+				</div>
+			</header>
+			<!-- 中部信息 -->
+			<div id="body" class="body">
+				<!-- 菜单信息 -->
+				<nav id="b-left" class="b-left">
+					<ul class="menu_wrap">
+						<li class="menu-first goods">
+							<a data-open = "none">商品管理</a>
+							<ul>
+								<li class="menu-second goods">
+									<a>商品上架</a>
+								</li>
+								<li class="menu-second goods">
+									<a>商品调整</a>
+								</li>
+								<li class="menu-second goods">
+									<a>商品删除</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="menu-first orders">
+							<a data-open = "none">订单管理</a>
+							<ul>
+								<li class="menu-second orders">
+									<a>订单表</a>
+								</li>
+								<li class="menu-second orders">
+									<a>未支付订单</a>
+								</li>
+								<li class="menu-second orders">
+									<a>已支付订单</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="menu-first users">
+							<a data-open = "none">用户管理</a>
+							<ul>
+								<li class="menu-second users">
+									<a>用户表</a>
+								</li>
+								<li class="menu-second users">
+									<a>VIP用户</a>
+								</li>
+								<li class="menu-second users">
+									<a>普通用户</a>
+								</li>
+							</ul>
+						</li>
+
+						<li class="kk">
+							<a>系统设置</a>
+						</li>
+					</ul>
+				</nav>
+				<!-- 主体 -->
+				<div id="b-right" class="b-right">
+					<iframe src="goodsList.html" name="content" width="100%" height="100%" frameborder="0"></iframe>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//获取所有一级菜单中的a元素
+			var fira = document.querySelectorAll('.menu-first>a');
+			//遍历所有的a元素绑定单击事件
+			for(var i = 0; i < fira.length; i++) {
+				
+				fira[i].addEventListener('click', function(index){
+					//alert("123");
+					for(var j=0;j<fira.length;j++){
+						console.log("全进来了！")
+						fira[j].nextSibling.nextSibling.style.display = 'none';
+						if((index.toElement.innerText)!==(fira[j].innerText)){
+							fira[j].dataset.open = 'none';
+						}
+						
+					}
+					//获取data-*的属性值
+					var data = this.dataset.open;
+					if (data == 'none') {
+						this.dataset.open = 'block';
+					}else {
+						this.dataset.open = 'none';
+					}
+					//修改当前点击的一级菜单下的显示状态
+					this.nextSibling.nextSibling.style.display = this.dataset.open;
+				});
+			}
+			
+			//获取所有二级菜单下的a
+			var sena = document.querySelectorAll('.menu-first>ul>li>a');
+			
+			for(var k=0; k<sena.length;k++){
+				sena[k].addEventListener('click',function(){
+					for(var j=0;j<sena.length;j++){
+						sena[j].className = '';
+					}
+					this.className = 'menu-active';
+				})
+			}
+		</script>
+	</body>
+
+</html>
